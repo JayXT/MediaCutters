@@ -5,6 +5,7 @@ The repository offers two GNU/Linux Bash scripts to simplify time-based video/au
 To use them ensure that the following dependencies are installed:
 - ffmpeg
 - libglib2.0-bin or an alternative containing gio executable (to move input files to Trash after processing)
+The scripts should be placed in any directory under [PATH](https://www.digitalocean.com/community/tutorials/how-to-view-and-update-the-linux-path-environment-variable) and made executable.
 
 Scripts are designed to operate as follows:
 1. Open terminal in a directory containing video or audio files to cut/trim.
@@ -46,6 +47,8 @@ cutse usage examples:
 Щоб використовувати їх, переконайтеся, що встановлено такі залежності:
 - ffmpeg
 - libglib2.0-bin або альтернативний пакет, що містить виконуваний файл gio (щоб переміщати вхідні файли до Смітника після обробки)
+
+Скрипти слід розмістити в будь-якому каталозі, що знаходиться в [PATH](https://itmaster.biz.ua/programming/linux/path-in-linux.html), та надати їм права на виконання.
 
 Скрипти розраховані на такий спосіб використання:
 1. Відкрийте термінал у каталозі, що містить відео- або аудіофайли, які потрібно обрізати.
