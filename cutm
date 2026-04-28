@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+[[ $# -eq 3 ]] || exit 1
+
+s="$1"  # cut start
+e="$2"  # cut end
+f="$3"  # input file
+o="${f%.*}.cut.${f##*.}"
+
+[[ -f "$f" ]] || exit 1
+
+tmp1="$(mktemp --suffix=".${f##*.}")"
+tmp2="$(mktemp --suffix=".${f##*.}")"
+list="$(mktemp)"
+
+cleanup() {
+  rm -f "$tmp1" "$tmp2" "$list"
+}
+trap cleanup EXIT
+
+# Left part: 0 -> s
+ffmpeg -hide_banner -loglevel error -y -i "$f" -to "$s" -map 0 -c copy "$tmp1"
+
+# Right part: e -> end
+ffmpeg -hide_banner -loglevel error -y -ss "$e" -i "$f" -map 0 -c copy "$tmp2"
+
+# Concat list for ffmpeg concat demuxer
+printf "file '%s'\nfile '%s'\n" "$tmp1" "$tmp2" > "$list"
+
+# Concatenate
+ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i "$list" -c copy "$o"
+
+gio trash "$f"

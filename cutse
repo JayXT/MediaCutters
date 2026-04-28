@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+[[ $# -eq 3 ]] || exit 1
+
+s="$1"  # Start time (or "-")
+e="$2"  # End time (or "-")
+f="$3"  # Input file
+o="${f%.*}.cut.${f##*.}"
+
+[[ -f "$f" ]] || exit 1
+
+if [[ "$s" == "-" ]]; then
+  ffmpeg -hide_banner -loglevel error -y -i "$f" -to "$e" -map 0 -c copy "$o"
+elif [[ "$e" == "-" ]]; then
+  ffmpeg -hide_banner -loglevel error -y -ss "$s" -i "$f" -map 0 -c copy "$o"
+else
+  ffmpeg -hide_banner -loglevel error -y -ss "$s" -to "$e" -i "$f" -map 0 -c copy "$o"
+fi
+
+gio trash "$f"
