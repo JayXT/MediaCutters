@@ -1,6 +1,6 @@
-# EN
+# MediaCutters
 
-## MediaCutters
+## EN
 The repository offers two GNU/Linux Bash scripts to simplify time-based video/audio parts deletion via ffmpeg. 
 To use them ensure that the following dependencies are installed:
 - ffmpeg
@@ -41,9 +41,7 @@ cutse usage examples:
 - `cutse 5:44 03:08:00 "sample audio.opus` replaces the original audio file with "sample audio.cut.opus" file where everything before 5min 44s and after 3h 8min 0s is removed.
 
 
-# UK
-
-## MediaCutters
+## UK
 Репозиторій містить два Bash-скрипти для GNU/Linux, які спрощують видалення частин відео/аудіо за часом за допомогою ffmpeg.  
 Щоб використовувати їх, переконайтеся, що встановлено такі залежності:
 - ffmpeg
