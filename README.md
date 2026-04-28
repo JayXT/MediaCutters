@@ -8,7 +8,7 @@ To use them ensure that the following dependencies are installed:
 
 The scripts should be placed in any directory under [PATH](https://www.digitalocean.com/community/tutorials/how-to-view-and-update-the-linux-path-environment-variable) and made executable.
 
-Scripts are designed to operate as follows:
+The solution is designed to operate as follows:
 1. Open terminal in a directory containing video or audio files to cut/trim.
 2. Type &lt;script name&gt; &lt;start time&gt; &lt;end time&gt; &lt;file name&gt; replacing parameters in brackets with actual values. Pro tip: use can use Tab for filename autocompletion.
 3. The original file is deleted and replaced with a new one ending with `.cut` suffix before an extension.
@@ -49,7 +49,7 @@ cutse usage examples:
 
 Скрипти слід розмістити в будь-якому каталозі, що знаходиться в [PATH](https://itmaster.biz.ua/programming/linux/path-in-linux.html), та надати їм права на виконання.
 
-Скрипти розраховані на такий спосіб використання:
+Рішення розраховане на такий спосіб використання:
 1. Відкрийте термінал у каталозі, що містить відео- або аудіофайли, які потрібно обрізати.
 2. Введіть &lt;назва скрипта&gt; &lt;час початку&gt; &lt;час кінця&gt; &lt;назва файлу&gt; замінивши частини в дужках на справжні значення. Порада: ви можете використовувати Tab для автодоповнення назви файлу.
 3. Оригінальний файл видаляється і замінюється новим із суфіксом `.cut` перед розширенням.
